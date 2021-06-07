@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="icon" format="reference" />
+    <attr name="title" format="string" />
+    <attr name="titleTextColor" format="color" />
+    <attr name="titleTextSize" format="dimension" />
+    <attr name="dividerColor" format="color" />
+    <attr name="backgroundColor" format="color" />
+    <attr name="radius" format="dimension" />
+    <attr name="radiusTopLeft" format="dimension" />
+    <attr name="radiusTopRight" format="dimension" />
+    <attr name="radiusBottomLeft" format="dimension" />
+    <attr name="radiusBottomRight" format="dimension" />
+    <attr name="dividerTop" format="boolean" />
+    <attr name="dividerBottom" format="boolean" />
+
+    <declare-styleable name="RoundedFrameLayout">
+        <attr name="backgroundColor" />
+        <attr name="radius" />
+        <attr name="radiusTopLeft" />
+        <attr name="radiusTopRight" />
+        <attr name="radiusBottomLeft" />
+        <attr name="radiusBottomRight" />
+    </declare-styleable>
+
+    <declare-styleable name="NavigationBar">
+        <attr name="backIcon" format="reference" />
+        <attr name="backIconVisible" format="boolean" />
+        <attr name="backIconWidth" format="dimension" />
+        <attr name="backIconHeight" format="dimension" />
+        <attr name="backIconColor" format="color" />
+        <attr name="title" />
+        <attr name="titleTextColor" />
+        <attr name="titleTextSize" />
+        <attr name="titleBold" format="boolean" />
+        <attr name="titleItalic" format="boolean" />
+        <attr name="contentInsetStart" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="MenuItemView">
+        <attr name="icon" />
+        <attr name="title" />
+        <attr name="iconEnd">
+            <enum name="next" value="0" />
+            <enum name="down" value="1" />
+        </attr>
+        <attr name="enableSwitch" format="boolean" />
+        <attr name="dividerColor" />
+        <attr name="dividerTop" />
+        <attr name="dividerBottom" />
+        <attr name ="iconWidth" format="dimension"/>
+        <attr name ="iconHeight" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="MenuValueItemView">
+        <attr name="title" />
+        <attr name="value" format="string" />
+        <attr name="titleTextColor" />
+        <attr name="titleTextSize" />
+        <attr name="titleTextStyle" />
+        <attr name="valueTextStyle">
+            <enum name="normal" value="0" />
+            <enum name="bold" value="1" />
+            <enum name="italic" value="2" />
+            <enum name="bold_italic" value="3" />
+        </attr>
+        <attr name="valueTextSize" format="dimension" />
+        <attr name="valueTextColor" format="color" />
+        <attr name="dividerColor" />
+        <attr name="dividerTop" />
+        <attr name="dividerBottom" />
+    </declare-styleable>
+
+
+    <declare-styleable name="TextInput">
+        <attr name="icon" />
+        <attr name="iconPadding" format="dimension" />
+        <attr name="iconPaddingStart" format="dimension" />
+        <attr name="iconPaddingEnd" format="dimension" />
+        <attr name="iconPaddingTop" format="dimension" />
+        <attr name="iconPaddingBottom" format="dimension" />
+        <attr name="iconTint" format="color" />
+    </declare-styleable>
+
+
+    <declare-styleable name="Button">
+        <attr name="backgroundColor" />
+        <attr name="radius" />
+        <attr name="radiusTopLeft" />
+        <attr name="radiusTopRight" />
+        <attr name="radiusBottomLeft" />
+        <attr name="radiusBottomRight" />
+        <attr name="gradient" format="boolean" />
+        <attr name="startColor" format="color" />
+        <attr name="endColor" format="color" />
+        <attr name="strokeWidth" />
+        <attr name="strokeColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundedBackgroundImageView">
+        <attr name="backgroundColor" />
+        <attr name="radius" />
+        <attr name="radiusTopLeft" />
+        <attr name="radiusTopRight" />
+        <attr name="radiusBottomLeft" />
+        <attr name="radiusBottomRight" />
+    </declare-styleable>
+
+    <declare-styleable name="StepView">
+        <attr name="activeLineColor" format="color" />
+        <attr name="inactiveLineColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="StepProgressBar">
+        <attr name="count" format="integer" />
+        <attr name="activeColor" format="color" />
+        <attr name="inactiveColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="PINView">
+        <attr name="spacing" format="dimension" />
+        <attr name="color" format="color" />
+        <attr name="strokeWidth" format="dimension" />
+        <attr name="pinLength" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="PINKeyboard">
+        <attr name="deleteDrawable" format="reference" />
+        <attr name="dividerColor" />
+        <attr name="dividerWidth" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundedLayout">
+        <attr name="backgroundColor" />
+        <attr name="radius" />
+        <attr name="radiusTopLeft" />
+        <attr name="radiusTopRight" />
+        <attr name="radiusBottomLeft" />
+        <attr name="radiusBottomRight" />
+        <attr name="strokeWidth" />
+        <attr name="strokeColor" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundedRelativeLayout">
+        <attr name="backgroundColor" />
+        <attr name="radius" />
+        <attr name="radiusTopLeft" />
+        <attr name="radiusTopRight" />
+        <attr name="radiusBottomLeft" />
+        <attr name="radiusBottomRight" />
+    </declare-styleable>
+
+    <declare-styleable name="TabBarItem">
+        <attr name="title" />
+        <attr name="activeIcon" format="reference" />
+        <attr name="inactiveIcon" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="MoneyTextView">
+        <attr name="money" format="string" />
+        <attr name="currency" format="string" />
+        <attr name="moneyTextSize" format="dimension" />
+        <attr name="moneyTextColor" format="color" />
+        <attr name="currencyTextSize" format="dimension" />
+        <attr name="currencyTextColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ProgressView">
+        <attr name="backgroundColor" />
+        <attr name="progressColor" format="color" />
+        <attr name="android:max" />
+        <attr name="android:progress" />
+    </declare-styleable>
+    <!--    Customer QR code-->
+    <declare-styleable name="BarcodeReader">
+        <attr name="auto_focus" format="boolean" />
+        <attr name="use_flash" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="ScannerOverlay">
+        <attr name="square_width" format="integer" />
+        <attr name="square_height" format="integer" />
+        <attr name="line_color" format="color" />
+        <attr name="line_width" format="integer" />
+        <attr name="line_speed" format="integer" />
+    </declare-styleable>
+    <integer name="scanner_rect_height">230</integer>
+    <integer name="scanner_rect_width">230</integer>
+    <color name="scanner_line">#00ceff</color>
+    <integer name="line_speed">5</integer>
+    <integer name="line_width">4</integer>
+
+    <declare-styleable name="TextViewRound">
+        <attr name="backgroundColor" />
+        <attr name="radius" />
+        <attr name="radiusTopLeft" />
+        <attr name="radiusTopRight" />
+        <attr name="radiusBottomLeft" />
+        <attr name="radiusBottomRight" />
+        <attr name="strokeWidth" />
+        <attr name="strokeColor" />
+    </declare-styleable>
+</resources>

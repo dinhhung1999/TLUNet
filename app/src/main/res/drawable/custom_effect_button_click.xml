@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <padding
+                android:bottom="@dimen/padding_shadow_bottom"
+                android:left="@dimen/padding_shadow"
+                android:right="@dimen/padding_shadow_bottom"
+                android:top="@dimen/padding_shadow" />
+            <gradient
+                android:startColor="@color/color_grey"
+                android:endColor="@color/color_grey"/>
+            <corners android:radius="@dimen/dp_15" />
+
+        </shape>
+    </item>
+    <item
+    android:state_enabled="true">
+    <ripple
+        android:color="@color/color_app">
+
+        <item
+            android:id="@android:id/background"
+
+            android:state_pressed="true">
+            <layer-list>
+
+                <item>
+                    <shape android:shape="rectangle">
+                        <padding
+                            android:bottom="@dimen/padding_shadow_bottom"
+                            android:left="@dimen/padding_shadow"
+                            android:right="@dimen/padding_shadow_bottom"
+                            android:top="@dimen/padding_shadow" />
+                        <gradient
+                            android:startColor="#10F67402"
+                            android:endColor="#10FDA000"/>
+                        <corners android:radius="@dimen/dp_15" />
+
+                    </shape>
+                </item>
+                <item>
+                    <shape android:shape="rectangle">
+                        <padding
+                            android:bottom="@dimen/padding_shadow_bottom"
+                            android:left="@dimen/padding_shadow"
+                            android:right="@dimen/padding_shadow_bottom"
+                            android:top="@dimen/padding_shadow" />
+                        <gradient
+                            android:startColor="@color/colorGradientStart"
+                            android:endColor="@color/colorGradientEnd"/>
+                        <corners android:radius="@dimen/dp_15" />
+
+                    </shape>
+                </item>
+                <item>
+                    <shape android:shape="rectangle">
+                        <padding
+                            android:bottom="@dimen/padding_shadow_bottom"
+                            android:left="@dimen/padding_shadow"
+                            android:right="@dimen/padding_shadow_bottom"
+                            android:top="@dimen/padding_shadow" />
+                        <gradient
+                            android:startColor="@color/colorGradientStart"
+                            android:endColor="@color/colorGradientEnd"/>
+                        <corners android:radius="@dimen/dp_15" />
+
+                    </shape>
+                </item>
+
+                <!-- Background -->
+                <item>
+                    <shape android:shape="rectangle">
+                        <padding
+                            android:bottom="@dimen/padding_shadow_bottom"
+                            android:left="@dimen/padding_shadow"
+                            android:right="@dimen/padding_shadow_bottom"
+                            android:top="@dimen/padding_shadow" />
+                        <gradient
+                            android:startColor="@color/colorGradientStart"
+                            android:endColor="@color/colorGradientEnd"/>
+                        <corners android:radius="@dimen/dp_15" />
+
+                    </shape>
+                </item>
+            </layer-list>
+        </item>
+
+
+    </ripple>
+</item>
+
+</selector>

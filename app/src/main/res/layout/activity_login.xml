@@ -38,65 +38,67 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <TextView
-        android:layout_marginTop="@dimen/_5sdp"
-        android:text="@string/email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-        
-    <EditText
-        android:id="@+id/etEmail"
-        android:lines="1"
-        android:inputType="text"
-        android:importantForAutofill="no"
-        android:textSize="@dimen/_16sdp"
-        tools:ignore="TextFields"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-        <TextView
-            android:layout_marginTop="@dimen/_5sdp"
-            android:text="@string/password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <RelativeLayout
+        <EditText
+            android:id="@+id/edtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5sdp">
+            android:layout_marginTop="30dp"
+            android:drawableStart="@drawable/ic_outline_email_24"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/sf_pro_medium"
+            android:hint="@string/email"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:paddingBottom="20dp"
+            android:textSize="16sp"
+            />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/edtPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawablePadding="@dimen/_10sdp"
+                android:layout_marginTop="10dp"
+                android:drawableStart="@drawable/ic_outline_lock_24"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/sf_pro_medium"
+                android:hint="@string/password"
                 android:importantForAutofill="no"
                 android:inputType="textPassword"
-                android:textSize="@dimen/_16sdp" />
+                android:paddingStart="0dp"
+                android:paddingEnd="50dp"
+                android:paddingBottom="20dp"
+                android:textSize="16sp" />
 
-            <ViewFlipper
-                android:id="@+id/viewFlipperEye"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true">
+            <ImageView
+                android:id="@+id/imgVisiblePassword"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical|end"
+                android:contentDescription="@string/app_name"
+                android:padding="8dp"
+                android:src="@drawable/ic_baseline_visibility_24" />
 
-                <ImageView
-                    android:layout_width="@dimen/_40sdp"
-                    android:layout_height="@dimen/_40sdp"
-                    android:paddingStart="@dimen/_10sdp"
-                    android:paddingEnd="@dimen/_10sdp"
-                    android:src="@drawable/ic_baseline_visibility_24" />
+        </FrameLayout>
 
-                <ImageView
-                    android:layout_width="@dimen/_40sdp"
-                    android:layout_height="@dimen/_40sdp"
-                    android:paddingStart="@dimen/_10sdp"
-                    android:paddingEnd="@dimen/_10sdp"
-                    android:src="@drawable/ic_baseline_visibility_off_24" />
-
-            </ViewFlipper>
-        </RelativeLayout>
-
+        <TextView
+            android:id="@+id/tvForgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:layout_marginBottom="20dp"
+            android:clickable="true"
+            android:textStyle="bold"
+            android:text="@string/forgot_password"
+            android:textColor="@color/clr_blue_light"
+            android:textSize="@dimen/_12sdp"
+            android:focusable="true" />
         <Button
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
@@ -113,13 +115,14 @@
             android:background="@drawable/custom_button_click" />
 
         <TextView
-            android:id="@+id/tvForgotPw"
+            android:id="@+id/tvRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/_15sdp"
             android:layout_marginBottom="@dimen/_40sdp"
-            android:text="@string/forgot_password"
+            android:clickable="true"
+            android:text="@string/create_account"
             android:textColor="@color/clr_blue_light"
             android:textSize="@dimen/_12sdp"
             android:textStyle="bold" />

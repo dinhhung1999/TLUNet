@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "664386883660",
+    "project_id": "tlunet-e54ca",
+    "storage_bucket": "tlunet-e54ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:664386883660:android:ce63fb09bd3a07268664e9",
+        "android_client_info": {
+          "package_name": "com.example.tlunet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "664386883660-ui0s5qt6v9i3k1m8nus8161hm37934lb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYdkbGOe2CF6P_mbr3UR2rsscU987xBEI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "664386883660-ui0s5qt6v9i3k1m8nus8161hm37934lb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "664386883660-ost3bi7eg0s0ol7qv45gpo36homindfm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "LiamVu.TLU-Docs"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

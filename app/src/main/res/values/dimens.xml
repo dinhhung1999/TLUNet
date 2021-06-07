@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dp_1">1dp</dimen>
+    <dimen name="dp_15">15dp</dimen>
+    <dimen name="sp_15">15sp</dimen>
+    <dimen name="dp_20">20dp</dimen>
+    <dimen name="dp_30">30dp</dimen>
+    <dimen name="dp_50">50dp</dimen>
+    <dimen name="dp_5">5dp</dimen>
+    <dimen name="dp_40">40dp</dimen>
+    <dimen name="dp_60">60dp</dimen>
+    <dimen name="dp_70">70dp</dimen>
+    <dimen name="dp_100">100dp</dimen>
+    <dimen name="dp_140">140dp</dimen>
+    <dimen name="dp_10">10dp</dimen>
+    <dimen name="sp_18">18sp</dimen>
+    <dimen name="dp_25">25dp</dimen>
+    <dimen name="sp_17">17sp</dimen>
+    <dimen name="dp_55">55dp</dimen>
+    <dimen name="dp_45">45dp</dimen>
+
+    <dimen name="sp_text_bar">16sp</dimen>
+    <dimen name="sp_text_title">14sp</dimen>
+    <dimen name="sp_text_data">12sp</dimen>
+    <dimen name="sp_text_button">14sp</dimen>
+    <dimen name="dp_35">35dp</dimen>
+    <dimen name="sp_20">20sp</dimen>
+
+    <dimen name="size_tab">47dp</dimen>
+    <dimen name="size_button">45dp</dimen>
+    <dimen name="size_title">19sp</dimen>
+    <dimen name="size_radius">15dp</dimen>
+    <dimen name="size_text_body">14sp</dimen>
+    <dimen name="dp_240">240dp</dimen>
+    <dimen name="text_size_big">20sp</dimen>
+    <dimen name="radius_button">15dp</dimen>
+    <dimen name="size_text_button">16sp</dimen>
+    <dimen name="sp_16">16sp</dimen>
+    <dimen name="sp_12">12sp</dimen>
+    <dimen name="padding_shadow">0.1dp</dimen>
+    <dimen name="padding_shadow_bottom">1dp</dimen>
+    <dimen name="dp_8">8dp</dimen>
+
+</resources>

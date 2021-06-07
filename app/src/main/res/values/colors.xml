@@ -7,7 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
+    <color name="color_bg_button_white">#000000</color>
+<!--    <color name="color_bg_button_white">#1AFFA800</color>-->
     <color name="text_week">#8b8b8b</color>
     <color name="text_news_summary">#999999</color>
     <color name="text_login">#47649e</color>
@@ -58,7 +59,7 @@
     <!--    dms-for-customer-->
     <color name="colorPrimary">#4695f6</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#4695f6</color>
+    <color name="colorAccent">#4695f6</color>197BFA
     <color name="app_blue">#4695f6</color>
     <color name="colorGradientEnd">#60A1FD</color>
     <color name="color_item_home">#FFFFFF</color>

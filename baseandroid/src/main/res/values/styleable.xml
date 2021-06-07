@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="titleStyle" format="enum">
+        <enum value="0" name="normal"/>
+        <enum value="1" name="bold"/>
+        <enum value="2" name="italic"/>
+        <enum value="3" name="bold_italic"/>
+    </attr>
+
+    <declare-styleable name="ReadMoreTextView">
+        <attr name="readMoreText" format="string"/>
+        <attr name="collapsingText" format="string"/>
+        <attr name="collapseLines" format="integer"/>
+        <attr name="rawText" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="TabBarViewPager">
+        <attr name="tabBarHeight" format="dimension">
+            <enum name="wrap_content" value="0"/>
+        </attr>
+        <attr name="iconSize" format="dimension"/>
+        <attr name="tabBarPaddingTop" format="dimension"/>
+        <attr name="tabBarPaddingBottom" format="dimension"/>
+        <attr name="tabBarBackground" format="reference|color"/>
+        <attr name="activeTintColor" format="color"/>
+        <attr name="inactiveTintColor" format="color"/>
+        <attr name="activeBackgroundColor" format="color"/>
+        <attr name="inactiveBackgroundColor" format="color"/>
+        <attr name="menu" format="reference"/>
+        <attr name="titleTextSize" format="dimension"/>
+        <attr name="titleStyle" />
+        <attr name="spacing" format="dimension"/>
+    </declare-styleable>
+</resources>

@@ -31,7 +31,7 @@
                 <androidx.cardview.widget.CardView
                     app:cardCornerRadius="@dimen/_35sdp"
                     android:layout_marginRight="@dimen/_15sdp"
-                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
                     android:layout_marginBottom="@dimen/_15sdp"
                     android:layout_width="@dimen/_35sdp"
                     android:layout_height="@dimen/_35sdp">
@@ -56,6 +56,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <TextView
+                    android:id="@+id/techMore"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     style="@style/textBoldWhiteH1"

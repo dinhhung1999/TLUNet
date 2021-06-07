@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:paddingStart="@dimen/_15sdp"
+    android:paddingEnd="10dp"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/_15sdp"
+    android:paddingRight="10dp">
+
+    <ImageView
+        android:id="@+id/imgIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_baseline_menu_book_24"/>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="#000"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/sf_pro_medium"
+        android:textSize="@dimen/_16sdp"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginRight="10dp" />
+
+    <Switch
+        android:id="@+id/sw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:thumbTint="@color/colorPrimary"/>
+
+    <ImageView
+        android:id="@+id/imgNext"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_baseline_arrow_forward_ios_24"/>
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/imgDown"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_baseline_arrow_forward_ios_24"/>
+
+</LinearLayout>

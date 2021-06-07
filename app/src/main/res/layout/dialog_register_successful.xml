@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CC313131">
+
+    <com.example.tlunet.view.RoundedFrameLayout
+        android:id="@+id/llAlert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:orientation="vertical"
+        android:background="#fff"
+        android:gravity="center"
+        app:radius="24dp"
+        android:padding="32dp"
+        android:layout_centerInParent="true">
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/imgAvatar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_tick"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:contentDescription="@string/app_name"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/create_account_successful"
+            android:fontFamily="@font/svn_gilroy_bold"
+            android:textSize="18sp"
+            android:textColor="@color/colorTextTitle"
+            android:layout_marginTop="@dimen/_40sdp"/>
+
+
+
+
+
+    </com.example.tlunet.view.RoundedFrameLayout>
+
+    <com.example.tlunet.view.RoundedBackgroundImageView
+        android:id="@+id/imgClose"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignTop="@id/llAlert"
+        android:layout_alignEnd="@id/llAlert"
+        android:layout_marginTop="-10dp"
+        android:layout_marginEnd="-10dp"
+        android:src="@drawable/ic_delete"
+        android:tint="@color/colorPrimary"
+        android:background="#fff"
+        android:elevation="3dp"
+        android:padding="10dp"
+        app:radius="@dimen/_40sdp"/>
+</RelativeLayout>
