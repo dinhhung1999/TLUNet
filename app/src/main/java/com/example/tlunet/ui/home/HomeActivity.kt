@@ -1,7 +1,9 @@
 package com.example.tlunet.ui.home
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.forEachIndexed
 import androidx.fragment.app.Fragment
@@ -16,7 +18,13 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-
+        val navigationBarColor = window.navigationBarColor
+        val background = resources.getDrawable(R.drawable.gradient_theme, null)
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        window.statusBarColor = Color.TRANSPARENT
+        window.navigationBarColor = Color.TRANSPARENT
+        window.setBackgroundDrawable(background)
+        window.navigationBarColor = navigationBarColor
         val fragments = listOf(
             HomeFragment(),
             HomeFragment(),
@@ -58,5 +66,6 @@ class HomeActivity : AppCompatActivity() {
 //        }
         vpHome.setCurrentItem(index, false)
     }
+
 
 }

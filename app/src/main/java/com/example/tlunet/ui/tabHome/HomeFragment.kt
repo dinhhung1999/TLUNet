@@ -7,29 +7,83 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tlunet.R
+import com.example.tlunet.extensions.alert
+import com.example.tlunet.model.categories.Categories
+import com.example.tlunet.model.subjects.Subjects
 import com.example.tlunet.navigation.Navigation
+import com.google.gson.Gson
+import com.mespitech.mvpbase.coremvp.BaseFragment
+import com.mespitech.mvpbase.coremvp.BaseView
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
-class HomeFragment : Fragment() {
+class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeFragmentContract.View {
+    override fun getLayoutId(): Int {
+        return R.layout.fragment_home
+    }
+    private lateinit var adapterCNTT : SubjectAdapter
+    private lateinit var adapterKT : SubjectAdapter
+    private lateinit var adapterKTCK : SubjectAdapter
+    private lateinit var adapterKTo : SubjectAdapter
+    private lateinit var adapterCategory : CategoryAdapter
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+    override fun init() {
+        mPresenter.fetchCategories()
+        mPresenter.fetchSubjects()
+        ////recyle
+        adapterCategory = CategoryAdapter(context!!)
+        adapterCategory.setOnItemClickListener { item ->
+
+        }
+        rvCategory.adapter = adapterCategory
+        rvCategory.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+
+        adapterCNTT = SubjectAdapter(context!!)
+        adapterCNTT.setOnItemClickListener { item ->
+
+        }
+        rvCNTT.adapter = adapterCNTT
+        rvCNTT.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+
+        rvKT.adapter = adapterCNTT //todo
+        rvKT.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+
+        rvKTCK.adapter = adapterCNTT //todo
+        rvKTCK.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+
+        rvKTo.adapter = adapterCNTT //todo
+        rvKTo.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        techMore.setOnClickListener {
-            Navigation.toCategory(this)
+    override fun initPresenter(): HomeFragmentPresenter {
+        return HomeFragmentPresenter()
+    }
+
+    override fun onError(message: String) {
+        alert(message)
+    }
+
+    override fun fillSubjects(listCNTT: List<Subjects>?, listKT: List<Subjects>?, listKTCK: List<Subjects>?, listKTo: List<Subjects>?) {
+        if(listCNTT!=null) {
+            adapterCNTT.appendData(listCNTT)
+        }
+        if(listKT!=null){
+            adapterKT.appendData(listKT)
+        }
+        if(listKTCK!=null){
+            adapterKTCK.appendData(listKTCK)
+        }
+        if(listKTo!=null){
+            adapterKTo.appendData(listKTo)
         }
     }
 
-    override fun onResume() {
-        super.onResume()
+    override fun fillCategories(listCategories: List<Categories>) {
+        adapterCategory.appendData(listCategories)
+
     }
+
 
 }
