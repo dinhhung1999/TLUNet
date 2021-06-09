@@ -26,7 +26,6 @@ class ForgotPasswordActivity : BaseActivity<ForgotPasswordPresenter>(),ForgotPas
         }
     }
     private fun onClickForgotPassword() {
-        btnForgotPassword.isClickable = false
         val email = edtEmail.text.toString()
         mPresenter.resetPassword(email)
     }
@@ -34,7 +33,7 @@ class ForgotPasswordActivity : BaseActivity<ForgotPasswordPresenter>(),ForgotPas
     override fun onResume() {
         super.onResume()
         edtEmail.setText("")
-        btnForgotPassword.isClickable = true
+//        btnForgotPassword.isClickable = true
     }
 
     override fun initPresenter(): ForgotPasswordPresenter {
@@ -43,18 +42,18 @@ class ForgotPasswordActivity : BaseActivity<ForgotPasswordPresenter>(),ForgotPas
 
     override fun errEmail() {
         alert(getString(R.string.invalidEmail))
-        btnForgotPassword.isClickable = true
+//        btnForgotPassword.isClickable = true
     }
 
     override fun onError(message: String) {
         alert(message)
-        btnForgotPassword.isClickable = true
+//        btnForgotPassword.isClickable = true
     }
 
     override fun onSuccess(message: String) {
         DoSuccessfulDialog(this,message) {
             Navigation.toLogin(this,true)
         }.show()
-        btnForgotPassword.isClickable = true
+//        btnForgotPassword.isClickable = true
     }
 }

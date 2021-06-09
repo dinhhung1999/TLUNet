@@ -47,7 +47,7 @@ class CreateAccountActivity : BaseActivity<CreateAccountPresenter>(),
         edtEmail.setText("")
         edtPassword.setText("")
         edtConfirmPassword.setText("")
-        btnCreateAccount.isClickable = true
+//        btnCreateAccount.isClickable = true
     }
 
     override fun initPresenter(): CreateAccountPresenter {
@@ -58,22 +58,22 @@ class CreateAccountActivity : BaseActivity<CreateAccountPresenter>(),
 
     override fun errEmailInvalid() {
         alert(getString(R.string.invalidEmail))
-        btnCreateAccount.isClickable = true
+//        btnCreateAccount.isClickable = true
 
     }
 
     override fun errPasswordInvalid() {
         alert(getString(R.string.invalidPassword))
-        btnCreateAccount.isClickable = true
+//        btnCreateAccount.isClickable = true
     }
 
     override fun errPasswordNotMatches() {
         alert(getString(R.string.err_passwword_not_too))
-        btnCreateAccount.isClickable = true
+//        btnCreateAccount.isClickable = true
     }
 
     private fun onClickCreateAccount() {
-        btnCreateAccount.isClickable = false
+//        btnCreateAccount.isClickable = false
         val email = edtEmail.text.toString()
         val password = edtPassword.text.toString()
         val confirmPassword = edtConfirmPassword.text.toString()
@@ -86,13 +86,13 @@ class CreateAccountActivity : BaseActivity<CreateAccountPresenter>(),
         RegisterSuccessfulDialog(this) {
             Navigation.toLogin(this,true)
         }.show()
-        btnCreateAccount.isClickable = true
+//        btnCreateAccount.isClickable = true
 
     }
 
     override fun onFailure(message: String) {
         alert(message)
-        btnCreateAccount.isClickable = true
+//        btnCreateAccount.isClickable = true
 
     }
 

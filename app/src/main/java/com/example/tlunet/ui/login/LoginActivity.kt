@@ -1,14 +1,22 @@
 package com.example.tlunet.ui.login
 
 import android.graphics.drawable.Drawable
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import com.example.tlunet.R
 import com.example.tlunet.extensions.alert
 import com.example.tlunet.navigation.Navigation
 import com.mespitech.mvpbase.coremvp.BaseActivity
+import kotlinx.android.synthetic.main.activity_create_account.*
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_login.edtEmail
+import kotlinx.android.synthetic.main.activity_login.edtPassword
+import kotlinx.android.synthetic.main.activity_login.imgVisiblePassword
 
 
 class LoginActivity : BaseActivity<LoginPresenter>(), LoginActivityContract.View {
+    private var visiblePassword = false
+
     override fun getLayoutId(): Int {
         return R.layout.activity_login;
     }
@@ -16,6 +24,8 @@ class LoginActivity : BaseActivity<LoginPresenter>(), LoginActivityContract.View
         return LoginPresenter()
     }
     override fun init() {
+
+        imgVisiblePassword.setOnClickListener { makeVisiblePassword(!visiblePassword) }
         btn_login.setOnClickListener {
             onClickLogin()
         }
@@ -27,13 +37,23 @@ class LoginActivity : BaseActivity<LoginPresenter>(), LoginActivityContract.View
         }
 
     }
-
+    private fun makeVisiblePassword(visible: Boolean) {
+        this.visiblePassword = visible
+        if (visible) {
+            edtPassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
+            imgVisiblePassword.setImageResource(R.drawable.ic_baseline_visibility_off_24)
+        } else {
+            edtPassword.transformationMethod = PasswordTransformationMethod.getInstance()
+            imgVisiblePassword.setImageResource(R.drawable.ic_baseline_visibility_24)
+        }
+        edtPassword.setSelection(edtPassword.text.length)
+    }
     private fun onClickCreateAccount() {
-        tvRegister.isClickable = false
+//        tvRegister.isClickable = false
         Navigation.toCreateAccount(this)
     }
     private fun onClickForgotPassword() {
-        tvForgotPassword.isClickable = false
+//        tvForgotPassword.isClickable = false
         Navigation.toForgotPassword(this)
     }
     override fun errPasswordToShort() {

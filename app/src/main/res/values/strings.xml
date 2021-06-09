@@ -40,4 +40,11 @@
     // forgotPassword
     <string name="send">Gửi đi</string>
 
+
+    <string name="list_null">Hiện không có dữ liệu để hiển thị</string>
+    <string name="cntt">Công nghệ thông tin</string>
+    <string name="ktck">Kỹ thuật cơ khí</string>
+    <string name="kt">Kinh tế</string>
+    <string name="kto">Kế toán</string>
+
 </resources>
