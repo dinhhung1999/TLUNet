@@ -30,7 +30,7 @@ import com.example.tlunet.navigation.Navigation
  * //                    Pray for no Bugs
  * =====================================================
  * Name：DVHung
- * Create on：30-05-2021
+ * Create on：06-06-2021
  * =====================================================
  */
 class SplashActivity : AppCompatActivity() {
