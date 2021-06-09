@@ -7,7 +7,6 @@ import com.example.tlunet.R
 import com.example.tlunet.extensions.alert
 import com.example.tlunet.navigation.Navigation
 import com.mespitech.mvpbase.coremvp.BaseActivity
-import kotlinx.android.synthetic.main.activity_create_account.*
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_login.edtEmail
 import kotlinx.android.synthetic.main.activity_login.edtPassword
