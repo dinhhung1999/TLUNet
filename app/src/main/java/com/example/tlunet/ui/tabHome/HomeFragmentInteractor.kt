@@ -3,6 +3,7 @@ package com.example.tlunet.ui.tabHome
 import android.annotation.SuppressLint
 import android.util.Log
 import com.example.tlunet.extensions.*
+import com.example.tlunet.http.FireStoreService.db
 import com.example.tlunet.model.categories.Categories
 import com.example.tlunet.model.subjects.Subjects
 import com.example.tlunet.utils.getObservable
@@ -13,7 +14,6 @@ import io.reactivex.schedulers.Schedulers
 
 
 class HomeFragmentInteractor : HomeFragmentContract.Interactor {
-    val db = Firebase.firestore
     @SuppressLint("CheckResult")
     override fun getCategories(callback: (status: String, List<Categories>?) -> Unit) {
         val categoryDB = db.collection(categories)
