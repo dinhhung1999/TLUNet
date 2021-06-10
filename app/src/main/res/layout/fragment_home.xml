@@ -15,7 +15,7 @@
                 android:id="@+id/llAppbar"
                 android:orientation="vertical"
                 app:layout_constraintTop_toTopOf="parent"
-                android:background="@color/color_app"
+                android:background="@drawable/gradient_theme"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_140sdp">
 
@@ -42,6 +42,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_marginRight="@dimen/_10sdp"
                     android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -54,7 +55,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                     <TextView
-                        android:id="@+id/techMore"
+                        android:id="@+id/tvMoreCategory"
+                        android:clickable="true"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         style="@style/textH0"
@@ -101,10 +103,11 @@
                         app:layout_constraintStart_toEndOf="@+id/titleCNTT"
                         app:layout_constraintLeft_toRightOf="@+id/titleCNTT"
                         style="@style/textBoldDarkH3"
-                        android:text="@string/cntt"
+                        android:text="@string/technology"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                     <TextView
+                        android:id="@+id/tvMoreTech"
                         android:layout_marginRight="@dimen/_15sdp"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
@@ -146,10 +149,11 @@
                         app:layout_constraintStart_toEndOf="@+id/titleKT"
                         app:layout_constraintLeft_toRightOf="@+id/titleKT"
                         style="@style/textBoldDarkH3"
-                        android:text="@string/kt"
+                        android:text="@string/economic"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                     <TextView
+                        android:id="@+id/tvMoreEconomic"
                         android:layout_marginRight="@dimen/_15sdp"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
@@ -192,10 +196,11 @@
                         app:layout_constraintStart_toEndOf="@+id/titleKTo"
                         app:layout_constraintLeft_toRightOf="@+id/titleKTo"
                         style="@style/textBoldDarkH3"
-                        android:text="@string/kto"
+                        android:text="@string/accounting"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                     <TextView
+                        android:id="@+id/tvMoreAccount"
                         android:layout_marginRight="@dimen/_15sdp"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
@@ -238,10 +243,11 @@
                         app:layout_constraintStart_toEndOf="@+id/titleKTCK"
                         app:layout_constraintLeft_toRightOf="@+id/titleKTCK"
                         style="@style/textBoldDarkH3"
-                        android:text="@string/ktck"
+                        android:text="@string/mechanical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                     <TextView
+                        android:id="@+id/tvMoreMechanical"
                         android:layout_marginRight="@dimen/_15sdp"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintRight_toRightOf="parent"

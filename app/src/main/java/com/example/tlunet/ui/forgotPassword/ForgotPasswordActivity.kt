@@ -1,5 +1,6 @@
 package com.example.tlunet.ui.forgotPassword
 
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.tlunet.R
@@ -55,5 +56,8 @@ class ForgotPasswordActivity : BaseActivity<ForgotPasswordPresenter>(),ForgotPas
             Navigation.toLogin(this,true)
         }.show()
 //        btnForgotPassword.isClickable = true
+    }
+    override fun overrideStatusBar(): Drawable? {
+        return getDrawable(R.drawable.gradient_theme)
     }
 }

@@ -1,7 +1,7 @@
 package com.example.tlunet.ui.createaccount
 
 import com.example.tlunet.extensions.*
-import com.google.firebase.auth.FirebaseAuth
+import com.example.tlunet.http.FireStoreService.auth
 
 
 class CreateAccountInteractor : CreateAccountActivityContract.Interactor {
@@ -10,7 +10,7 @@ class CreateAccountInteractor : CreateAccountActivityContract.Interactor {
         password: String,
         callback: ( status: String, message: String) -> Unit
     ) {
-        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
+        auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     callback(successStatus,"")

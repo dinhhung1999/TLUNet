@@ -1,9 +1,13 @@
 package com.example.tlunet.navigation
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import androidx.fragment.app.Fragment
+import com.example.tlunet.extensions.categoriesCode
+import com.example.tlunet.extensions.titleNav
 import com.example.tlunet.ui.category.CategoryActivity
+import com.example.tlunet.ui.category.categorydetail.CategoryDetailActivity
 import com.example.tlunet.ui.createaccount.CreateAccountActivity
 import com.example.tlunet.ui.forgotPassword.ForgotPasswordActivity
 import com.example.tlunet.ui.home.HomeActivity
@@ -20,6 +24,8 @@ object Navigation {
     }
     fun toCategory(fragment: Fragment) {
         val intent = Intent(fragment.context, CategoryActivity::class.java)
+        fragment.startActivity(intent)
+
     }
     fun toCreateAccount(activity: Activity) {
         val intent = Intent(activity, CreateAccountActivity::class.java)
@@ -36,5 +42,13 @@ object Navigation {
         }
         activity.startActivity(intent)
     }
+
+    fun toCategoryDetail(activity: Context, code: String, name: String) {
+        val intent = Intent(activity, CategoryDetailActivity::class.java)
+        intent.putExtra(categoriesCode, code)
+        intent.putExtra(titleNav, name)
+        activity.startActivity(intent)
+    }
+
 
 }
