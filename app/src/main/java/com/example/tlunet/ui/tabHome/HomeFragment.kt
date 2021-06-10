@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tlunet.R
-import com.example.tlunet.extensions.alert
+import com.example.tlunet.extensions.*
 import com.example.tlunet.model.categories.Categories
 import com.example.tlunet.model.subjects.Subjects
 import com.example.tlunet.navigation.Navigation
@@ -34,15 +34,14 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeFragmentContract
         mPresenter.fetchSubjects()
         ////recyle
         adapterCategory = CategoryAdapter(context!!)
-        adapterCategory.setOnItemClickListener { item ->
-
+        adapterCategory.setOnItemClickListener {
+            Navigation.toCategoryDetail(context!!, it.code!!,it.name!!)
         }
         rvCategory.adapter = adapterCategory
         rvCategory.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
 
         adapterCNTT = SubjectAdapter(context!!)
-        adapterCNTT.setOnItemClickListener { item ->
-
+        adapterCNTT.setOnItemClickListener {
         }
         rvCNTT.adapter = adapterCNTT
         rvCNTT.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
@@ -55,6 +54,22 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeFragmentContract
 
         rvKTo.adapter = adapterCNTT //todo
         rvKTo.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+
+        tvMoreCategory.setOnClickListener {
+            Navigation.toCategory(this)
+        }
+        tvMoreTech.setOnClickListener {
+            Navigation.toCategoryDetail(context!!, CNTT,cnttName!!)
+        }
+        tvMoreEconomic.setOnClickListener {
+            Navigation.toCategoryDetail(context!!, KT, ktName!!)
+        }
+        tvMoreAccount.setOnClickListener {
+            Navigation.toCategoryDetail(context!!, KTo, ktoName!!)
+        }
+        tvMoreMechanical.setOnClickListener {
+            Navigation.toCategoryDetail(context!!, KTCK, ktckName!!)
+        }
     }
 
     override fun initPresenter(): HomeFragmentPresenter {
@@ -69,15 +84,15 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeFragmentContract
         if(listCNTT!=null) {
             adapterCNTT.appendData(listCNTT)
         }
-        if(listKT!=null){
-            adapterKT.appendData(listKT)
-        }
-        if(listKTCK!=null){
-            adapterKTCK.appendData(listKTCK)
-        }
-        if(listKTo!=null){
-            adapterKTo.appendData(listKTo)
-        }
+//        if(listKT!=null){
+//            adapterKT.appendData(listKT)
+//        }
+//        if(listKTCK!=null){
+//            adapterKTCK.appendData(listKTCK)
+//        }
+//        if(listKTo!=null){
+//            adapterKTo.appendData(listKTo)
+//        }
     }
 
     override fun fillCategories(listCategories: List<Categories>) {

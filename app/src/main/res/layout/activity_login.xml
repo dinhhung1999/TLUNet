@@ -6,22 +6,15 @@
     android:layout_height="match_parent"
     android:background="@color/bgColor"
     tools:context=".ui.login.LoginActivity">
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvLogo"
+    <ImageView
+        android:id="@+id/imgLogo"
         android:layout_marginTop="@dimen/_100sdp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:cardCornerRadius="@dimen/_50sdp"
         android:layout_width="@dimen/_70sdp"
-        android:layout_height="@dimen/_70sdp">
-        <ImageView
-            android:scaleType="center"
-            android:layout_gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/logo"/>
-    </androidx.cardview.widget.CardView>
+        android:layout_height="@dimen/_70sdp"
+        android:src="@drawable/logo"/>
 
     <LinearLayout
         android:id="@+id/llForm"
@@ -30,7 +23,7 @@
         android:layout_marginLeft="@dimen/_30sdp"
         android:layout_marginRight="@dimen/_30sdp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/cvLogo"
+        app:layout_constraintTop_toBottomOf="@id/imgLogo"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
