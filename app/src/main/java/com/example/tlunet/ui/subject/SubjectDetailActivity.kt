@@ -13,10 +13,12 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.example.tlunet.R
+import com.example.tlunet.extensions.code
 import com.example.tlunet.extensions.titleNav
 import com.example.tlunet.model.comments.Comment
 import com.example.tlunet.model.documents.Document
 import com.example.tlunet.model.subjects.Subjects
+import com.example.tlunet.navigation.Navigation
 import com.mespitech.mvpbase.coremvp.BaseActivity
 import kotlinx.android.synthetic.main.activity_subject_detail.*
 
@@ -65,6 +67,10 @@ class SubjectDetailActivity : BaseActivity<SubjectDetailPresenter>(), SubjectDet
 //        }
         rvComments.adapter = adapterComment
         rvComments.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
+
+        btnComment.setOnClickListener {
+            Navigation.toCommentActivity(this,mPresenter.subjectCode)
+        }
     }
 
     override fun initPresenter(): SubjectDetailPresenter {
@@ -117,5 +123,11 @@ class SubjectDetailActivity : BaseActivity<SubjectDetailPresenter>(), SubjectDet
         if(listComments!=null){
             adapterComment.appendData(listComments)
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mPresenter.fetchDocuments(intent)
+        mPresenter.fetchComments(intent)
     }
 }

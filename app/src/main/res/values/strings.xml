@@ -55,4 +55,9 @@
 
     <string name="list_null">Hiện không có dữ liệu để hiển thị</string>
 
+    // comments
+    <string name="commentSuccess">Thêm bình luận thành công</string>
+    <string name="commentFail">Thêm bình luận thất bại</string>
+    <string name="enterComment">Soạn bình luận</string>
+
 </resources>

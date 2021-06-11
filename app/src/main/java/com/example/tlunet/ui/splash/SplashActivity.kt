@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import com.example.tlunet.R
 import com.example.tlunet.navigation.Navigation
+import com.example.tlunet.utils.Preferences
 
 /**
  * //                       _ooOoo_
@@ -37,7 +38,10 @@ class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       try {
+
+        Preferences.init(this.applicationContext)
+
+        try {
            setContentView(R.layout.activity_splash)
                Handler().postDelayed({
                        Navigation.toLogin(this, true)

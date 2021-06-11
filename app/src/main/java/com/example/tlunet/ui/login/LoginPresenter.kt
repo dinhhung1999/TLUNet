@@ -2,6 +2,7 @@ package com.example.tlunet.ui.login
 
 import com.example.tlunet.extensions.successCode
 import com.example.tlunet.extensions.successStatus
+import com.example.tlunet.utils.Preferences
 import com.google.firebase.auth.FirebaseAuth
 import com.mespitech.mvpbase.coremvp.BasePresenter
 
@@ -25,6 +26,7 @@ class LoginPresenter : BasePresenter<LoginActivityContract.View>(),
             mView?.dismissLoading()
             if(status == successStatus && code == successCode) {
                 Uid = uid
+                Preferences.getInstance().saveEmail(email)
                 mView?.navigateHome()
             }
             else{

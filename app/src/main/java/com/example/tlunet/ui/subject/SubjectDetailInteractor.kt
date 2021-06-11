@@ -59,7 +59,7 @@ class SubjectDetailInteractor : SubjectDetailContract.Interactor {
         callback: (status: String, List<Comment>?) -> Unit
     ) {
         val commentDB = FireStoreService.db.collection(comments)
-        val commentQuery = commentDB.whereEqualTo(subjectCode,codeSubject )
+        val commentQuery = commentDB.whereEqualTo(subjectCode,codeSubject).orderBy(createAtKey)
         commentQuery.getObservable<Comment>()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

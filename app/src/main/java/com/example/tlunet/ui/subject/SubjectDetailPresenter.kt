@@ -8,9 +8,11 @@ import com.mespitech.mvpbase.coremvp.BasePresenter
 
 class SubjectDetailPresenter : BasePresenter<SubjectDetailContract.View>(), SubjectDetailContract.Presenter {
     val interactor = SubjectDetailInteractor()
+    var subjectCode : String = ""
     override fun fetchSubject(intent: Intent) {
         mView?.showLoading()
         val code = intent.getStringExtra(code)
+        subjectCode = code.toString()
         interactor.getSubjects(code.toString()) {status, list ->
             mView?.dismissLoading()
             if(status == successStatus ){
@@ -25,6 +27,7 @@ class SubjectDetailPresenter : BasePresenter<SubjectDetailContract.View>(), Subj
     override fun fetchDocuments(intent: Intent) {
         mView?.showLoading()
         val code = intent.getStringExtra(code)
+        subjectCode = code.toString()
         interactor.getDocuments(code.toString()) {status, list ->
             mView?.dismissLoading()
             if(status == successStatus ){
@@ -39,6 +42,7 @@ class SubjectDetailPresenter : BasePresenter<SubjectDetailContract.View>(), Subj
     override fun fetchComments(intent: Intent) {
         mView?.showLoading()
         val code = intent.getStringExtra(code)
+        subjectCode = code.toString()
         interactor.getComments(code.toString()) {status, list ->
             mView?.dismissLoading()
             if(status == successStatus ){
