@@ -6,6 +6,7 @@ import android.text.style.UnderlineSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tlunet.R
@@ -66,7 +67,7 @@ class DocAdapter  (val context: Context) :
                 setSpan(UnderlineSpan(), 0, listData[position].documentUrl!!.length, 0)
             }
             holder.tvLink.text = spannableString
-            holder.itemView.setOnClickListener { onItemClickListener?.invoke(listData[position]) }
+            holder.item.setOnClickListener { onItemClickListener?.invoke(listData[position]) }
         }
 
     }
@@ -75,6 +76,7 @@ class DocAdapter  (val context: Context) :
     companion object {
         class BlockadeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             val tvLink: TextView = itemView.tvLink
+            val item: LinearLayout = itemView.item
 
         }
 

@@ -27,7 +27,6 @@ class HomeFragmentPresenter : BasePresenter<HomeFragmentContract.View>(),HomeFra
     override fun fetchSubjects() {
         mView?.showLoading()
         interactor.getSubjects { status, list ->
-            mView?.dismissLoading()
             if(status == successStatus){
                 if(list?.size!! >0){
                     list.forEach {
@@ -44,6 +43,7 @@ class HomeFragmentPresenter : BasePresenter<HomeFragmentContract.View>(),HomeFra
             else {
                 Log.e("error", status)
             }
+            mView?.dismissLoading()
         }
     }
 

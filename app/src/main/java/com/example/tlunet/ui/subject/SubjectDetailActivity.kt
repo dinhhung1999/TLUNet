@@ -52,13 +52,13 @@ class SubjectDetailActivity : BaseActivity<SubjectDetailPresenter>(), SubjectDet
         rvReferenceDocuments.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
 
         adapterDoc = DocAdapter(this)
+
+        rvDocuments.adapter = adapterDoc
+        rvDocuments.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
         adapterDoc.setOnItemClickListener {
             val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(it.documentUrl.toString()))
             startActivity(browserIntent)
         }
-        rvDocuments.adapter = adapterDoc
-        rvDocuments.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
-
         adapterComment = CommentAdapter(this)
 //        adapterReDoc.setOnItemClickListener {
 //
