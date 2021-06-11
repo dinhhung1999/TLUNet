@@ -45,7 +45,6 @@ class MenuItemView : FrameLayout {
     private var onSwitchChangeListener: ((Boolean) -> Unit)? = null
 
 
-
     constructor(context: Context) : super(context) {}
 
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {

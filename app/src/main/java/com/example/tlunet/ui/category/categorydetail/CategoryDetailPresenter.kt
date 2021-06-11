@@ -14,13 +14,14 @@ class CategoryDetailPresenter : BasePresenter<CategoryDetailActivityContract.Vie
         mView?.showLoading()
         val categoryCode = intent.getStringExtra(categoriesCode)
         interactor.getSubjects(categoryCode!!) {status, list ->
+            mView?.dismissLoading()
+
             if(status == successStatus) {
                 mView?.fillSubject(list!!)
             }
             else {
                 Log.e("error", status)
             }
-            mView?.dismissLoading()
         }
     }
 }

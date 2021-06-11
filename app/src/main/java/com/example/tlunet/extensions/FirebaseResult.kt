@@ -12,6 +12,7 @@ package com.example.tlunet.extensions
      const val subjects: String = "subjects"
      const val name: String = "name"
      const val code: String = "code"
+     const val subjectCode: String = "subjectCode"
      const val categoriesCode: String = "categoriesCode"
      const val titleNav: String = "titleNav"
      const val CNTT: String = "CNTT"

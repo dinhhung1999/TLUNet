@@ -42,6 +42,7 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeFragmentContract
 
         adapterCNTT = SubjectAdapter(context!!)
         adapterCNTT.setOnItemClickListener {
+            Navigation.toSubjectDetail(context!!,it.code!!,it.name!!)
         }
         rvCNTT.adapter = adapterCNTT
         rvCNTT.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)

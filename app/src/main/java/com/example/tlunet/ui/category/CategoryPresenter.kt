@@ -10,13 +10,13 @@ class CategoryPresenter : BasePresenter<CategoryActivityContract.View>(), Catego
     override fun fetchCategories() {
         mView?.showLoading()
         interactor.getCategories {status, list ->
+            mView?.dismissLoading()
             if(status == successStatus){
                 mView?.fillCategories(list!!)
             }
             else {
                 Log.e("error", status)
             }
-            mView?.dismissLoading()
         }
     }
 }

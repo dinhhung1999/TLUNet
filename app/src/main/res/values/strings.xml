@@ -40,6 +40,18 @@
     // forgotPassword
     <string name="send">Gửi đi</string>
 
+    // subject
+    <string name="subjectName">Tên môn học:</string>
+    <string name="subjectCode">Mã môn học:</string>
+    <string name="credits">Số tín chỉ: </string>
+    <string name="credit"> Tín chỉ</string>
+    <string name="studyDocument">Tài liệu học tập</string>
+    <string name="lesson">A. Bài giảng</string>
+    <string name="referenceDocuments">B. Tài liệu tham khảo</string>
+    <string name="documents">Project tham khảo</string>
+    <string name="comment">Bình luận</string>
+    <string name="share">Chia sẻ tài liệu</string>
+
 
     <string name="list_null">Hiện không có dữ liệu để hiển thị</string>
 

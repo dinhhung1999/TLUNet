@@ -76,6 +76,12 @@
     <style name="textH1">
         <item name="android:textSize">14sp</item>
     </style>
+    <style name="textH2">
+        <item name="android:textSize">15sp</item>
+    </style>
+    <style name="textH3">
+        <item name="android:textSize">16sp</item>
+    </style>
     <style name="textH0">
         <item name="android:textSize">12sp</item>
     </style>

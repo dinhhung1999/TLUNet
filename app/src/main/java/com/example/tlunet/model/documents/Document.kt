@@ -1,8 +1,9 @@
 package com.example.tlunet.model.documents
 
+import java.io.Serializable
+
 data class Document(
-    val createTime: String,
-    val fields: Fields,
-    val name: String,
-    val updateTime: String
-)
+    val author: String? ="",
+    val documentUrl: String? = "",
+    val subjectCode: String? =""
+) : Serializable
