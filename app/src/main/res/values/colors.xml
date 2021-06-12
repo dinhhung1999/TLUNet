@@ -56,6 +56,7 @@
     <!--    <color name="color_app_light">#1BA8FF</color>-->
     <color name="color_app_30">#4D015499</color>
     <color name="color_app_splash">#0D015499</color>
+    <color name="colorBody1">#585858</color>
 
     <!--    dms-for-customer-->
     <color name="colorPrimary">#4695f6</color>

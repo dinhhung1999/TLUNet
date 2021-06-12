@@ -51,6 +51,7 @@
     <string name="documents">Project tham khảo</string>
     <string name="comment">Bình luận</string>
     <string name="share">Chia sẻ tài liệu</string>
+    <string name="upload">Tải lên</string>
 
 
     <string name="list_null">Hiện không có dữ liệu để hiển thị</string>
@@ -59,5 +60,11 @@
     <string name="commentSuccess">Thêm bình luận thành công</string>
     <string name="commentFail">Thêm bình luận thất bại</string>
     <string name="enterComment">Soạn bình luận</string>
+
+    //share
+    <string name="subject">Môn học</string>
+    <string name="url">URL</string>
+    <string name="none">-</string>
+
 
 </resources>

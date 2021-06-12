@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.tlunet.view.RoundedLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    app:radiusTopLeft="16dp"
+    app:radiusTopRight="16dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:text="@string/none"
+        android:gravity="center"
+        style="@style/textBoldDarkH1"
+        android:textSize="@dimen/sp_text_title"
+        />
+    <ImageView
+        android:id="@+id/imgClose"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="-40dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_delete"
+        android:padding="10dp"
+        android:layout_gravity="end"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvValues"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"/>
+
+</com.example.tlunet.view.RoundedLayout>

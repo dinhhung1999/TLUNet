@@ -4,8 +4,11 @@ import android.annotation.SuppressLint
 import android.util.Log
 import com.example.tlunet.extensions.*
 import com.example.tlunet.http.FireStoreService.db
+import com.example.tlunet.model.User
 import com.example.tlunet.model.categories.Categories
+import com.example.tlunet.model.subjects.SubjectOption
 import com.example.tlunet.model.subjects.Subjects
+import com.example.tlunet.utils.Preferences
 import com.example.tlunet.utils.getObservable
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -83,37 +86,56 @@ class HomeFragmentInteractor : HomeFragmentContract.Interactor {
     }
 
     @SuppressLint("CheckResult")
-    override fun searchSubjects(subjectName: String, callback: (status: String, List<Subjects>?) -> Unit) {
-        val subjectDB = db.collection(subjects)
-        val subjectQuery = subjectDB.whereEqualTo(name,subjectName)
-        subjectQuery.getObservable<Subjects>()
+    override fun getUserData(id: String, callback: (status: String, User?) -> Unit) {
+        val userDB = db.collection(users).document(id)
+        userDB.getObservable<User>()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ documents ->
                     if (documents != null) {
-                callback(successStatus, documents)
-            } else {
-                callback(errStatus, null)
-            }
+                        callback(successStatus, documents)
+                    } else {
+                        callback(errStatus, null)
+                    }
                 }, { exception ->
                     Log.e("firebase", "Error getting data", exception)
                     callback(errStatus, null)
                 })
+        }
+    }
 
-//        subjectDB.whereEqualTo(name,subjectName).get().addOnSuccessListener { documents ->
-//            if (documents != null) {
-//                val  data = mutableListOf<Subjects>()
-//                for (document in documents.iterator()) {
-//                    val subject = document.toObject(Subjects::class.java)
-//                    data.add(subject)
-//                }
-//                callback(successStatus, data)
+//    @SuppressLint("CheckResult")
+//    override fun searchSubjects(subjectName: String, callback: (status: String, List<Subjects>?) -> Unit) {
+//        val subjectDB = db.collection(subjects)
+//        val subjectQuery = subjectDB.whereEqualTo(name,subjectName)
+//        subjectQuery.getObservable<Subjects>()
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe({ documents ->
+//                    if (documents != null) {
+//                callback(successStatus, documents)
 //            } else {
 //                callback(errStatus, null)
 //            }
-//        }.addOnFailureListener{
-//            Log.e("firebase", "Error getting data", it)
-//            callback(errStatus, null)
-//        }
-    }
-}
+//                }, { exception ->
+//                    Log.e("firebase", "Error getting data", exception)
+//                    callback(errStatus, null)
+//                })
+//
+////        subjectDB.whereEqualTo(name,subjectName).get().addOnSuccessListener { documents ->
+////            if (documents != null) {
+////                val  data = mutableListOf<Subjects>()
+////                for (document in documents.iterator()) {
+////                    val subject = document.toObject(Subjects::class.java)
+////                    data.add(subject)
+////                }
+////                callback(successStatus, data)
+////            } else {
+////                callback(errStatus, null)
+////            }
+////        }.addOnFailureListener{
+////            Log.e("firebase", "Error getting data", it)
+////            callback(errStatus, null)
+////        }
+//    }
+//}

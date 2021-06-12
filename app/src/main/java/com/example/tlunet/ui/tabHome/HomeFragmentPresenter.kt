@@ -4,6 +4,7 @@ import android.util.Log
 import com.example.tlunet.extensions.*
 import com.example.tlunet.model.categories.Categories
 import com.example.tlunet.model.subjects.Subjects
+import com.example.tlunet.utils.Preferences
 import com.mespitech.mvpbase.coremvp.BasePresenter
 
 class HomeFragmentPresenter : BasePresenter<HomeFragmentContract.View>(),HomeFragmentContract.Presenter {
@@ -47,8 +48,18 @@ class HomeFragmentPresenter : BasePresenter<HomeFragmentContract.View>(),HomeFra
         }
     }
 
-    override fun searchSubject(subjectName: String) {
-        TODO("Not yet implemented")
+    override fun fetchUserData() {
+        val email = Preferences.getInstance().getEmail()
+            mView?.showLoading()
+            interactor.getUserData(email!!) { status, data ->
+            if(status == successStatus){
+                Preferences.getInstance().saveUserData(data!!)
+            }
+            else {
+                Log.e("error", status)
+            }
+            mView?.dismissLoading()
+        }
     }
 
 }

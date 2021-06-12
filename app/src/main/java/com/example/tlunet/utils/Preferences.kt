@@ -6,6 +6,10 @@ import android.content.pm.PackageManager
 import androidx.core.app.ActivityCompat
 import com.example.tlunet.R
 import com.example.tlunet.extensions.emailKey
+import com.example.tlunet.extensions.optionSubjectKey
+import com.example.tlunet.extensions.users
+import com.example.tlunet.model.User
+import com.example.tlunet.model.subjects.SubjectOption
 import com.google.gson.Gson
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
@@ -47,6 +51,16 @@ class Preferences private constructor(val context: Context) {
     fun getEmail(): String? {
         return sharedPreferences.getString(emailKey, null)
     }
+
+    fun saveUserData(user: User) {
+        val json = gson.toJson(user)
+        sharedPreferences.edit().putString(users, json).apply()
+    }
+    fun getUserData(): User? {
+        val json = sharedPreferences.getString(users, null) ?: return null
+        return gson.fromJson(json, User::class.java)
+    }
+
 
 
 }

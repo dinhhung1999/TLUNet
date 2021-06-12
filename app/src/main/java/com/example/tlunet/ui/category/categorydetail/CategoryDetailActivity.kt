@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tlunet.R
 import com.example.tlunet.extensions.titleNav
 import com.example.tlunet.model.subjects.Subjects
+import com.example.tlunet.navigation.Navigation
 import com.mespitech.mvpbase.coremvp.BaseActivity
 import kotlinx.android.synthetic.main.activity_category_detail.*
 
@@ -23,8 +24,8 @@ class CategoryDetailActivity : BaseActivity<CategoryDetailPresenter>(),CategoryD
         }
         mPresenter.fetchSubjects(intent!!)
         adapter = SubjectAdapter2(this)
-        adapter.setOnItemClickListener { item ->
-
+        adapter.setOnItemClickListener {
+            Navigation.toSubjectDetail(this,it.code!!,it.name!!)
         }
         rvSubjects.adapter = adapter
         rvSubjects.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)

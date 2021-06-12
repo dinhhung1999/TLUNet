@@ -30,6 +30,7 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeFragmentContract
     private lateinit var adapterCategory : CategoryAdapter
 
     override fun init() {
+        mPresenter.fetchUserData()
         mPresenter.fetchCategories()
         mPresenter.fetchSubjects()
         ////recyle

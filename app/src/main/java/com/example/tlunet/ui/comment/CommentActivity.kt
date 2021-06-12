@@ -13,6 +13,8 @@ class CommentActivity : BaseActivity<CommentActivityPresenter>(), CommentActivit
     }
 
     override fun init() {
+        navBar.setOnClickListener { finish() }
+
         btn_send.setOnClickListener {
             if(edtComment.text.toString().trim().isNotEmpty()){
                 mPresenter.postComment(edtComment.text.toString(),intent)

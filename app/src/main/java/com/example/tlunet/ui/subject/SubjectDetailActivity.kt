@@ -15,17 +15,19 @@ import com.bumptech.glide.request.target.Target
 import com.example.tlunet.R
 import com.example.tlunet.extensions.code
 import com.example.tlunet.extensions.titleNav
+import com.example.tlunet.model.User
 import com.example.tlunet.model.comments.Comment
 import com.example.tlunet.model.documents.Document
 import com.example.tlunet.model.subjects.Subjects
 import com.example.tlunet.navigation.Navigation
+import com.example.tlunet.utils.Preferences
 import com.mespitech.mvpbase.coremvp.BaseActivity
 import kotlinx.android.synthetic.main.activity_subject_detail.*
 
 
 class SubjectDetailActivity : BaseActivity<SubjectDetailPresenter>(), SubjectDetailContract.View {
     private lateinit var adapterReDoc : ReDocAdapter
-    private lateinit var adapterDoc : DocAdapter
+    private lateinit  var adapterDoc : DocAdapter
     private lateinit var adapterComment : CommentAdapter
 
     override fun getLayoutId(): Int {
@@ -37,6 +39,22 @@ class SubjectDetailActivity : BaseActivity<SubjectDetailPresenter>(), SubjectDet
         navBar.setTitle(title!!.toString())
         navBar.setBackPressListener {
             finish()
+        }
+        val  userData = Preferences.getInstance().getUserData() ?: return
+        if(userData.role == 1) {
+            btnShare.visibility = View.VISIBLE
+            tvSpace.visibility = View.VISIBLE
+            btnShare.isClickable = true
+            btnShare.isEnabled = true
+            btnShare.setOnClickListener {
+                Navigation.toDocumentActivity(this)
+            }
+        }
+        else {
+            btnShare.visibility = View.GONE
+            tvSpace.visibility = View.GONE
+            btnShare.isClickable = false
+            btnShare.isEnabled = false
         }
         mPresenter.fetchSubject(intent)
         mPresenter.fetchDocuments(intent)
@@ -71,6 +89,7 @@ class SubjectDetailActivity : BaseActivity<SubjectDetailPresenter>(), SubjectDet
         btnComment.setOnClickListener {
             Navigation.toCommentActivity(this,mPresenter.subjectCode)
         }
+
     }
 
     override fun initPresenter(): SubjectDetailPresenter {

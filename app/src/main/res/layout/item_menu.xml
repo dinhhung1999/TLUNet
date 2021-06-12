@@ -40,6 +40,7 @@
         android:thumbTint="@color/colorPrimary"/>
 
     <ImageView
+        android:visibility="gone"
         android:id="@+id/imgNext"
         android:layout_width="24dp"
         android:layout_height="24dp"
@@ -50,6 +51,6 @@
         android:id="@+id/imgDown"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:src="@drawable/ic_baseline_arrow_forward_ios_24"/>
+        android:src="@drawable/ic_baseline_arrow_drop_down_24"/>
 
 </LinearLayout>

@@ -170,12 +170,13 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvReferenceDocuments"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingRight="@dimen/_10sdp"
                 android:paddingBottom="@dimen/_5sdp" />
 
             <TextView
+
                 style="@style/textBoldDarkH3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -187,7 +188,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvDocuments"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="@dimen/_20sdp"
                 android:paddingTop="@dimen/_5sdp"
@@ -227,6 +228,9 @@
         android:layout_height="wrap_content">
         <Button
             android:id="@+id/btnShare"
+            android:visibility="gone"
+            android:clickable="false"
+            android:enabled="false"
             android:layout_weight="0.8"
             android:layout_width="0dp"
             style="@style/textH2"
@@ -237,6 +241,8 @@
             android:textColor="@color/color_white"
             android:background="@drawable/custom_button_click" />
         <TextView
+            android:id="@+id/tvSpace"
+            android:visibility="gone"
             android:layout_weight="0.15"
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>

@@ -15,6 +15,8 @@ import com.example.tlunet.ui.createaccount.CreateAccountActivity
 import com.example.tlunet.ui.forgotPassword.ForgotPasswordActivity
 import com.example.tlunet.ui.home.HomeActivity
 import com.example.tlunet.ui.login.LoginActivity
+import com.example.tlunet.ui.postDocument.DocumentActivity
+import com.example.tlunet.ui.postDocument.DocumentActivityContract
 import com.example.tlunet.ui.subject.SubjectDetailActivity
 
 object Navigation {
@@ -64,6 +66,13 @@ object Navigation {
         intent.putExtra(code, subjectCode)
         activity.startActivity(intent)
     }
+
+    fun toDocumentActivity(activity: Context) {
+        val intent = Intent(activity, DocumentActivity::class.java)
+        activity.startActivity(intent)
+    }
+
+
 
 
 
