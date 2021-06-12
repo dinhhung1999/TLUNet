@@ -27,6 +27,8 @@ class DocumentActivity : BaseActivity<DocumentActivityPresenter>(),DocumentActiv
         btn_upload.setOnClickListener {
             if(edtUrl.text.toString().trim().isNotEmpty()&&selectedOption!= null){
                 mPresenter.postDocument(selectedOption!!.code.toString(), edtUrl.text.toString(),intent)
+            } else{
+                alert("Giữ liệu không được để trống")
             }
         }
     }
