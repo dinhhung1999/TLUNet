@@ -1,6 +1,5 @@
 package com.example.tlunet.ui.postDocument
 
-import androidx.lifecycle.MutableLiveData
 import com.example.tlunet.R
 import com.example.tlunet.extensions.alert
 import com.example.tlunet.model.subjects.SubjectOption

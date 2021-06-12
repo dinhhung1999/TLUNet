@@ -40,7 +40,7 @@ object Navigation {
         val intent = Intent(activity, ForgotPasswordActivity::class.java)
         activity.startActivity(intent)
     }
-    fun toLogin(activity: Activity, clearStack: Boolean) {
+    fun toLogin(activity: Context, clearStack: Boolean) {
         val intent = Intent(activity, LoginActivity::class.java)
         if (clearStack) {
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK

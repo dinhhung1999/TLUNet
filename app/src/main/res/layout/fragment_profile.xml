@@ -1,14 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.tabProfile.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="45dp"
+        android:background="@drawable/gradient_theme">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/svn_gilroy_bold"
+            android:text="@string/account"
+            android:textColor="#fff"
+            android:textSize="@dimen/size_title"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <RelativeLayout
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/layout_header"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:background="@drawable/gradient_theme"
+            android:paddingTop="@dimen/dp_25">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/ivAvatar"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/logo"
+                app:riv_border_color="#fff"
+                app:riv_border_width="1dp"
+                app:riv_corner_radius="24dp" />
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/ivAvatar"
+                android:layout_marginStart="@dimen/dp_30"
+                android:id="@+id/tvEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/none"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/size_text_body" />
+
+
+        </RelativeLayout>
+        <com.example.tlunet.view.MenuItemView
+            android:id="@+id/itLogout"
+            app:layout_constraintTop_toBottomOf="@+id/layout_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            app:dividerTop="false"
+            app:dividerBottom="false"
+            app:title="Đăng xuất"
+            app:titleTextSize="@dimen/sp_text_title"
+            app:valueTextSize="@dimen/sp_text_title"
+            app:valueTextStyle="bold" />
+        <com.example.tlunet.view.MenuItemView
+            android:id="@+id/itLanguage"
+            android:layout_margin="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/itLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dividerTop="false"
+            app:dividerBottom="false"
+            app:title="Ngôn ngữ"
+            app:titleTextSize="@dimen/sp_text_title"
+            app:valueTextSize="@dimen/sp_text_title"
+            app:valueTextStyle="bold" />
+        <Button
+            android:enabled="false"
+            android:clickable="false"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/btnShare"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/custom_shadow"
+            android:fontFamily="@font/sf_pro_medium"
+            android:text="@string/share"
+            android:textAllCaps="false"
+            android:textSize="@dimen/sp_text_button" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
 
 </FrameLayout>

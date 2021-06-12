@@ -2,14 +2,13 @@ package com.example.tlunet.ui.home
 
 import android.graphics.Color
 import android.os.Bundle
-import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.forEachIndexed
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
 import com.example.tlunet.R
 import com.example.tlunet.ui.tabHome.HomeFragment
+import com.example.tlunet.ui.tabProfile.ProfileFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_home.*
 
 
@@ -28,43 +27,28 @@ class HomeActivity : AppCompatActivity() {
         val fragments = listOf(
             HomeFragment(),
             HomeFragment(),
-            HomeFragment(),
-            HomeFragment()
+            ProfileFragment()
         )
         vpHome.adapter = HomePagerAdapter(supportFragmentManager, fragments)
-        vpHome.offscreenPageLimit = 4
+        vpHome.offscreenPageLimit = 3
 
-        navBottom.setOnNavigationItemReselectedListener {
-            var fragment: Fragment? = null
-            when(it.itemId){
+
+        navBottom.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener {
+            item -> var fragment: Fragment? = null
+            when(item.itemId){
                 R.id.itemHome ->  selectTab(0)
-//                R.id.itemHome -> fragment = HomeFragment()
-
                 R.id.itemSearch -> selectTab(1)
-                R.id.itemWishlist -> selectTab(2)
-                R.id.itemProfile -> selectTab(3)
+                R.id.itemProfile -> selectTab(2)
+                else -> selectTab(0)
             }
-//            loadFragment(fragment);
-        }
+        })
 
-        selectTab(0)
     }
-//    private fun loadFragment(fragment: Fragment?): Boolean {
-//        if (fragment != null) {
-//            val ft: FragmentTransaction = supportFragmentManager.beginTransaction()
-//            ft.replace(R.id.vpHome, fragment)
-//            ft.commit()
-//            return true
-//        }
-//        return false
-//    }
 
-    private fun selectTab(index: Int) {
-//
-//        navBottom.forEachIndexed { i, tabBarItem ->
-////
-//        }
+
+    private fun selectTab(index: Int) : Boolean {
         vpHome.setCurrentItem(index, false)
+        return true
     }
 
 

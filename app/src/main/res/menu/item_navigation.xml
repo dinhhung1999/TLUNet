@@ -12,10 +12,10 @@
         android:id="@+id/itemSearch"
         android:icon="@drawable/ic_baseline_search_24"
         android:title="@string/search" />
-    <item
-        android:id="@+id/itemWishlist"
-        android:icon="@drawable/ic_baseline_favorite_border_24"
-        android:title="@string/wishlist" />
+<!--    <item-->
+<!--        android:id="@+id/itemWishlist"-->
+<!--        android:icon="@drawable/ic_baseline_favorite_border_24"-->
+<!--        android:title="@string/wishlist" />-->
     <item
         android:id="@+id/itemProfile"
         android:icon="@drawable/ic_baseline_person_24"

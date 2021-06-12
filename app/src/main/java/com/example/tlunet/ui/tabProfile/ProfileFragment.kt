@@ -1,58 +1,53 @@
 package com.example.tlunet.ui.tabProfile
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import com.example.tlunet.R
+import com.example.tlunet.extensions.alert
+import com.example.tlunet.navigation.Navigation
+import com.example.tlunet.utils.Preferences
+import com.mespitech.mvpbase.coremvp.BaseFragment
+import kotlinx.android.synthetic.main.fragment_profile.*
+import kotlinx.android.synthetic.main.fragment_profile.btnShare
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ProfileFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class ProfileFragment : BaseFragment<ProfileFragmentPresenter>(), ProfileFragmentContract.View {
+    override fun getLayoutId(): Int {
+        return R.layout.fragment_profile
+    }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    override fun init() {
+        val userData = Preferences.getInstance().getUserData() ?: return
+        tvEmail.text = userData.email
+        if(userData.role == 1) {
+            btnShare.visibility = View.VISIBLE
+            btnShare.isClickable = true
+            btnShare.isEnabled = true
+            btnShare.setOnClickListener {
+                Navigation.toDocumentActivity(context!!)
+            }
+        }
+        else {
+            btnShare.visibility = View.GONE
+            btnShare.isClickable = false
+            btnShare.isEnabled = false
+        }
+        itLogout.setOnClickListener {
+            mPresenter.logout()
+        }
+        itLanguage.setOnClickListener {
+            alert("Tính năng đang phát triển")
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+    override fun initPresenter(): ProfileFragmentPresenter {
+        return ProfileFragmentPresenter()
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ProfileFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-                ProfileFragment().apply {
-                    arguments = Bundle().apply {
-                        putString(ARG_PARAM1, param1)
-                        putString(ARG_PARAM2, param2)
-                    }
-                }
+    override fun onSuccess() {
+        Navigation.toLogin(context!!,true)
+    }
+
+    override fun onError() {
+        alert("Đã có lỗi xảy ra")
     }
 }
