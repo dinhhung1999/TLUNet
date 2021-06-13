@@ -35,12 +35,15 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeFragmentContract
         }
         svSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
-                svSearch.setQuery("",true)
                 Navigation.toSearchActivity(context!!,query)
-                return false
+                svSearch.setQuery("",false)
+                svSearch.isFocusable = false;
+                svSearch.isIconified = false;
+                svSearch.clearFocus()
+                return true
             }
             override fun onQueryTextChange(newText: String): Boolean {
-                return false
+                return true
             }
         })
         rvCategory.adapter = adapterCategory

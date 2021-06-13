@@ -10,8 +10,8 @@ import com.example.tlunet.navigation.Navigation
 import com.example.tlunet.ui.category.categorydetail.SubjectAdapter2
 import com.mespitech.mvpbase.coremvp.BaseActivity
 import kotlinx.android.synthetic.main.activity_search.*
+import kotlinx.android.synthetic.main.activity_search.navBar
 import kotlinx.android.synthetic.main.activity_search.svSearch
-import kotlinx.android.synthetic.main.fragment_home.*
 
 class SearchActivity : BaseActivity<SearchActivityPresenter>(), SearchActivityContract.View {
     private lateinit var adapter : SubjectAdapter2
@@ -21,9 +21,10 @@ class SearchActivity : BaseActivity<SearchActivityPresenter>(), SearchActivityCo
     }
 
     override fun init() {
+        navBar.setOnClickListener { finish() }
         val name = intent.getStringExtra(name).toString() ?: ""
         if(name.isNotEmpty()){
-            svSearch.setQuery(name,true)
+            svSearch.setQuery(name,false)
             mPresenter.searchSubject(name)
         }
         adapter = SubjectAdapter2(this)
@@ -34,12 +35,14 @@ class SearchActivity : BaseActivity<SearchActivityPresenter>(), SearchActivityCo
         rvSubjects.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
         svSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
-                svSearch.setQuery(query,true)
                 mPresenter.searchSubject(query)
-                return false
+                svSearch.isFocusable = false;
+                svSearch.isIconified = false;
+                svSearch.clearFocus()
+                return true
             }
             override fun onQueryTextChange(newText: String): Boolean {
-                return false
+                return true
             }
         })
     }
