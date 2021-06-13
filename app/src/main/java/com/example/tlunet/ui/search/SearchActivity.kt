@@ -34,6 +34,7 @@ class SearchActivity : BaseActivity<SearchActivityPresenter>(), SearchActivityCo
         rvSubjects.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
         svSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
+                svSearch.setQuery(query,true)
                 mPresenter.searchSubject(query)
                 return false
             }

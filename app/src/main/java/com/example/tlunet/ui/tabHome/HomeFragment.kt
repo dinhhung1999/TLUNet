@@ -9,7 +9,9 @@ import com.example.tlunet.model.subjects.Subjects
 import com.example.tlunet.navigation.Navigation
 import com.example.tlunet.ui.home.HomeActivity
 import com.mespitech.mvpbase.coremvp.BaseFragment
+import kotlinx.android.synthetic.main.activity_search.*
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_home.svSearch
 
 
 class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeFragmentContract.View {
@@ -33,6 +35,7 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeFragmentContract
         }
         svSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
+                svSearch.setQuery("",true)
                 Navigation.toSearchActivity(context!!,query)
                 return false
             }
