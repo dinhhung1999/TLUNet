@@ -22,7 +22,6 @@
         android:layout_height="wrap_content"
         android:elevation="@dimen/_2sdp"
         android:background="?android:attr/windowBackground"
-        app:itemBackground="@color/bgColor"
         android:foreground="?attr/selectableItemBackground"
         app:menu="@menu/item_navigation">
     </com.google.android.material.bottomnavigation.BottomNavigationView>

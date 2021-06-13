@@ -3,6 +3,7 @@ package com.example.tlunet.ui.home
 import android.graphics.Color
 import android.os.Bundle
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.tlunet.R
@@ -12,7 +13,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_home.*
 
 
-class HomeActivity : AppCompatActivity() {
+open class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -25,20 +26,18 @@ class HomeActivity : AppCompatActivity() {
         window.setBackgroundDrawable(background)
         window.navigationBarColor = navigationBarColor
         val fragments = listOf(
-            HomeFragment(),
-            HomeFragment(),
-            ProfileFragment()
+                HomeFragment(),
+                ProfileFragment()
         )
         vpHome.adapter = HomePagerAdapter(supportFragmentManager, fragments)
-        vpHome.offscreenPageLimit = 3
+        vpHome.offscreenPageLimit = 2
 
 
-        navBottom.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener {
-            item -> var fragment: Fragment? = null
-            when(item.itemId){
-                R.id.itemHome ->  selectTab(0)
-                R.id.itemSearch -> selectTab(1)
-                R.id.itemProfile -> selectTab(2)
+        navBottom.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.itemHome -> selectTab(0)
+//                R.id.itemSearch -> selectTab(1)
+                R.id.itemProfile -> selectTab(1)
                 else -> selectTab(0)
             }
         })
@@ -46,10 +45,11 @@ class HomeActivity : AppCompatActivity() {
     }
 
 
-    private fun selectTab(index: Int) : Boolean {
+    private fun selectTab(index: Int): Boolean {
         vpHome.setCurrentItem(index, false)
         return true
     }
+
 
 
 }

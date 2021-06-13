@@ -4,10 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import androidx.fragment.app.Fragment
-import com.example.tlunet.extensions.categoriesCode
-import com.example.tlunet.extensions.code
-import com.example.tlunet.extensions.emailKey
-import com.example.tlunet.extensions.titleNav
+import com.example.tlunet.extensions.*
 import com.example.tlunet.ui.category.CategoryActivity
 import com.example.tlunet.ui.category.categorydetail.CategoryDetailActivity
 import com.example.tlunet.ui.comment.CommentActivity
@@ -17,6 +14,7 @@ import com.example.tlunet.ui.home.HomeActivity
 import com.example.tlunet.ui.login.LoginActivity
 import com.example.tlunet.ui.postDocument.DocumentActivity
 import com.example.tlunet.ui.postDocument.DocumentActivityContract
+import com.example.tlunet.ui.search.SearchActivity
 import com.example.tlunet.ui.subject.SubjectDetailActivity
 
 object Navigation {
@@ -70,6 +68,12 @@ object Navigation {
     fun toDocumentActivity(activity: Context) {
         val intent = Intent(activity, DocumentActivity::class.java)
         activity.startActivity(intent)
+    }
+
+    fun toSearchActivity(context: Context,subjectName: String) {
+        val intent = Intent(context, SearchActivity::class.java)
+        intent.putExtra(name, subjectName)
+        context.startActivity(intent)
     }
 
 

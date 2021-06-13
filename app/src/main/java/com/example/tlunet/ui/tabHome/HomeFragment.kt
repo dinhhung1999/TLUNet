@@ -1,21 +1,14 @@
 package com.example.tlunet.ui.tabHome
 
-import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProviders
+import android.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tlunet.R
 import com.example.tlunet.extensions.*
 import com.example.tlunet.model.categories.Categories
 import com.example.tlunet.model.subjects.Subjects
 import com.example.tlunet.navigation.Navigation
-import com.google.gson.Gson
+import com.example.tlunet.ui.home.HomeActivity
 import com.mespitech.mvpbase.coremvp.BaseFragment
-import com.mespitech.mvpbase.coremvp.BaseView
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
@@ -36,32 +29,45 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeFragmentContract
         ////recyle
         adapterCategory = CategoryAdapter(context!!)
         adapterCategory.setOnItemClickListener {
-            Navigation.toCategoryDetail(context!!, it.code!!,it.name!!)
+            Navigation.toCategoryDetail(context!!, it.code!!, it.name!!)
         }
+        svSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                Navigation.toSearchActivity(context!!,query)
+                return false
+            }
+            override fun onQueryTextChange(newText: String): Boolean {
+                return false
+            }
+        })
         rvCategory.adapter = adapterCategory
-        rvCategory.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        rvCategory.layoutManager = LinearLayoutManager(
+            context,
+            LinearLayoutManager.HORIZONTAL,
+            false
+        )
 
         adapterCNTT = SubjectAdapter(context!!)
         adapterCNTT.setOnItemClickListener {
-            Navigation.toSubjectDetail(context!!,it.code!!,it.name!!)
+            Navigation.toSubjectDetail(context!!, it.code!!, it.name!!)
         }
         rvCNTT.adapter = adapterCNTT
-        rvCNTT.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        rvCNTT.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
         rvKT.adapter = adapterCNTT //todo
-        rvKT.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        rvKT.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
         rvKTCK.adapter = adapterCNTT //todo
-        rvKTCK.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        rvKTCK.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
         rvKTo.adapter = adapterCNTT //todo
-        rvKTo.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        rvKTo.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
         tvMoreCategory.setOnClickListener {
             Navigation.toCategory(this)
         }
         tvMoreTech.setOnClickListener {
-            Navigation.toCategoryDetail(context!!, CNTT,cnttName!!)
+            Navigation.toCategoryDetail(context!!, CNTT, cnttName!!)
         }
         tvMoreEconomic.setOnClickListener {
             Navigation.toCategoryDetail(context!!, KT, ktName!!)
@@ -82,7 +88,12 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeFragmentContract
         alert(message)
     }
 
-    override fun fillSubjects(listCNTT: List<Subjects>?, listKT: List<Subjects>?, listKTCK: List<Subjects>?, listKTo: List<Subjects>?) {
+    override fun fillSubjects(
+        listCNTT: List<Subjects>?,
+        listKT: List<Subjects>?,
+        listKTCK: List<Subjects>?,
+        listKTo: List<Subjects>?
+    ) {
         if(listCNTT!=null) {
             adapterCNTT.appendData(listCNTT)
         }

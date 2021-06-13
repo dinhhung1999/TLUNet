@@ -23,9 +23,15 @@
         app:title="@string/category"
         app:titleBold="true"
         app:titleTextSize="@dimen/size_title" />
-
+    <androidx.core.widget.NestedScrollView
+        android:layout_marginTop="@dimen/size_tab"
+        app:layout_constraintTop_toBottomOf="@+id/navBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSubjects"
+        android:nestedScrollingEnabled="false"
         app:layout_constraintTop_toTopOf="@+id/navBar"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

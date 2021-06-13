@@ -27,6 +27,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_45sdp">
                     <SearchView
+                        android:id="@+id/svSearch"
+                        android:iconifiedByDefault="false"
+                        android:queryHint="@string/hintSearch"
+                        style="@style/textH2"
                         android:layout_marginRight="@dimen/_5sdp"
                         android:background="@color/white"
                         android:layout_weight="3"

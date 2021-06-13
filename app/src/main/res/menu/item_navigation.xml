@@ -8,10 +8,10 @@
         android:id="@+id/itemHome"
         android:icon="@drawable/ic_baseline_home_24"
         android:title="@string/home" />
-    <item
-        android:id="@+id/itemSearch"
-        android:icon="@drawable/ic_baseline_search_24"
-        android:title="@string/search" />
+<!--    <item-->
+<!--        android:id="@+id/itemSearch"-->
+<!--        android:icon="@drawable/ic_baseline_search_24"-->
+<!--        android:title="@string/search" />-->
 <!--    <item-->
 <!--        android:id="@+id/itemWishlist"-->
 <!--        android:icon="@drawable/ic_baseline_favorite_border_24"-->

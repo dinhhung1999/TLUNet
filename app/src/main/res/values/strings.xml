@@ -66,6 +66,8 @@
     <string name="url">URL</string>
     <string name="none">-</string>
     <string name="account">Tài khoản</string>
+    <string name="hintSearch">Tên môn học</string>
+
 
 
 </resources>
