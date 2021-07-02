@@ -60,13 +60,26 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeFragmentContract
         rvCNTT.adapter = adapterCNTT
         rvCNTT.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
-        rvKT.adapter = adapterCNTT //todo
+        adapterKT = SubjectAdapter(context!!)
+        adapterKT.setOnItemClickListener {
+            Navigation.toSubjectDetail(context!!, it.code!!, it.name!!)
+        }
+        rvKT.adapter = adapterKT
         rvKT.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
-        rvKTCK.adapter = adapterCNTT //todo
+
+        adapterKTCK = SubjectAdapter(context!!)
+        adapterKTCK.setOnItemClickListener {
+            Navigation.toSubjectDetail(context!!, it.code!!, it.name!!)
+        }
+        rvKTCK.adapter = adapterKTCK
         rvKTCK.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
-        rvKTo.adapter = adapterCNTT //todo
+        adapterKTo = SubjectAdapter(context!!)
+        adapterKTo.setOnItemClickListener {
+            Navigation.toSubjectDetail(context!!, it.code!!, it.name!!)
+        }
+        rvKTo.adapter = adapterKTo
         rvKTo.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
         tvMoreCategory.setOnClickListener {
@@ -103,15 +116,15 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeFragmentContract
         if(listCNTT!=null) {
             adapterCNTT.appendData(listCNTT)
         }
-//        if(listKT!=null){
-//            adapterKT.appendData(listKT)
-//        }
-//        if(listKTCK!=null){
-//            adapterKTCK.appendData(listKTCK)
-//        }
-//        if(listKTo!=null){
-//            adapterKTo.appendData(listKTo)
-//        }
+        if(listKT!=null){
+            adapterKT.appendData(listKT)
+        }
+        if(listKTCK!=null){
+            adapterKTCK.appendData(listKTCK)
+        }
+        if(listKTo!=null){
+            adapterKTo.appendData(listKTo)
+        }
     }
 
     override fun fillCategories(listCategories: List<Categories>) {

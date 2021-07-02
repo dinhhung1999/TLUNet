@@ -43,18 +43,25 @@ class SubjectDetailActivity : BaseActivity<SubjectDetailPresenter>(), SubjectDet
         val  userData = Preferences.getInstance().getUserData() ?: return
         if(userData.role == 1) {
             btnShare.visibility = View.VISIBLE
-            tvSpace.visibility = View.VISIBLE
             btnShare.isClickable = true
             btnShare.isEnabled = true
             btnShare.setOnClickListener {
                 Navigation.toDocumentActivity(this)
             }
+            btnComment.visibility = View.GONE
+            btnComment.isClickable = false
+            btnComment.isEnabled = false
         }
         else {
             btnShare.visibility = View.GONE
-            tvSpace.visibility = View.GONE
             btnShare.isClickable = false
             btnShare.isEnabled = false
+            btnComment.visibility = View.VISIBLE
+            btnComment.isClickable = true
+            btnComment.isEnabled = true
+            btnComment.setOnClickListener {
+                Navigation.toCommentActivity(this,mPresenter.subjectCode)
+            }
         }
         mPresenter.fetchSubject(intent)
         mPresenter.fetchDocuments(intent)
@@ -86,9 +93,7 @@ class SubjectDetailActivity : BaseActivity<SubjectDetailPresenter>(), SubjectDet
         rvComments.adapter = adapterComment
         rvComments.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
 
-        btnComment.setOnClickListener {
-            Navigation.toCommentActivity(this,mPresenter.subjectCode)
-        }
+
 
     }
 
