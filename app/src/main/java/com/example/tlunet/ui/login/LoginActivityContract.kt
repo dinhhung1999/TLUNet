@@ -6,6 +6,7 @@ import com.mespitech.mvpbase.coremvp.BaseView
 class LoginActivityContract {
     interface View : BaseView {
         fun errPasswordToShort()
+        fun errEmail()
         fun errAuthenticateFailed(message: String)
         fun navigateHome()
 

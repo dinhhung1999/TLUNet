@@ -59,6 +59,10 @@ class LoginActivity : BaseActivity<LoginPresenter>(), LoginActivityContract.View
         alert(getString(R.string.email_pass_null))
     }
 
+    override fun errEmail() {
+        alert(getString(R.string.invalidEmail))
+    }
+
 
     override fun errAuthenticateFailed(message: String) {
         alert(message)

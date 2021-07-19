@@ -13,9 +13,7 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.example.tlunet.R
-import com.example.tlunet.extensions.code
 import com.example.tlunet.extensions.titleNav
-import com.example.tlunet.model.User
 import com.example.tlunet.model.comments.Comment
 import com.example.tlunet.model.documents.Document
 import com.example.tlunet.model.subjects.Subjects

@@ -21,9 +21,8 @@ package com.example.tlunet.extensions
      const val KT: String = "KT"
      const val ktName: String = "Kinh tế"
      const val KTCK: String = "KTCK"
-     const val ktckName: String = "Kỹ thuật cơ khí"
-     const val KTo: String = "KTo"
-     const val ktoName: String = "Kế toán"
+     const val ktckName: String = "Cơ khí"
+
 
      const val authorKey: String = "author"
      const val contentKey: String = "content"

@@ -13,7 +13,6 @@ class HomeFragmentPresenter : BasePresenter<HomeFragmentContract.View>(),HomeFra
     val  listCNTT = mutableListOf<Subjects>()
     val  listKT = mutableListOf<Subjects>()
     val  listKTCK = mutableListOf<Subjects>()
-    val  listKTo = mutableListOf<Subjects>()
     override fun fetchCategories() {
         interactor.getCategories {status, list ->
             if(status == successStatus){
@@ -35,11 +34,10 @@ class HomeFragmentPresenter : BasePresenter<HomeFragmentContract.View>(),HomeFra
                             CNTT -> listCNTT.add(it)
                             KT -> listKT.add(it)
                             KTCK -> listKTCK.add(it)
-                            KTo -> listKTo.add(it)
                         }
                     }
                 }
-                mView?.fillSubjects(listCNTT,listKT,listKTCK,listKTo)
+                mView?.fillSubjects(listCNTT,listKT,listKTCK)
             }
             else {
                 Log.e("error", status)

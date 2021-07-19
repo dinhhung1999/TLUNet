@@ -8,7 +8,7 @@ import com.mespitech.mvpbase.coremvp.BaseView
 class HomeFragmentContract {
     interface View : BaseView {
         fun onError(message : String)
-        fun fillSubjects(listCNTT : List<Subjects>?,listKT : List<Subjects>?, listKTCK : List<Subjects>?, listKTo : List<Subjects>?)
+        fun fillSubjects(listCNTT : List<Subjects>?,listKT : List<Subjects>?, listKTCK : List<Subjects>?)
         fun fillCategories(listCategories : List<Categories>)
     }
 

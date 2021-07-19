@@ -13,7 +13,7 @@ class LoginPresenter : BasePresenter<LoginActivityContract.View>(),
 
     override fun login(email: String, password: String) {
         if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            mView?.errPasswordToShort()
+            mView?.errEmail()
             return
         }
         if (password.length < 4) {

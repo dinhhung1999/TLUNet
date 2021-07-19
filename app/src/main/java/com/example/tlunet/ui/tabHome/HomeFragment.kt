@@ -7,7 +7,6 @@ import com.example.tlunet.extensions.*
 import com.example.tlunet.model.categories.Categories
 import com.example.tlunet.model.subjects.Subjects
 import com.example.tlunet.navigation.Navigation
-import com.example.tlunet.ui.home.HomeActivity
 import com.mespitech.mvpbase.coremvp.BaseFragment
 import kotlinx.android.synthetic.main.activity_search.*
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -21,7 +20,6 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeFragmentContract
     private lateinit var adapterCNTT : SubjectAdapter
     private lateinit var adapterKT : SubjectAdapter
     private lateinit var adapterKTCK : SubjectAdapter
-    private lateinit var adapterKTo : SubjectAdapter
     private lateinit var adapterCategory : CategoryAdapter
 
     override fun init() {
@@ -75,12 +73,6 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeFragmentContract
         rvKTCK.adapter = adapterKTCK
         rvKTCK.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
-        adapterKTo = SubjectAdapter(context!!)
-        adapterKTo.setOnItemClickListener {
-            Navigation.toSubjectDetail(context!!, it.code!!, it.name!!)
-        }
-        rvKTo.adapter = adapterKTo
-        rvKTo.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
         tvMoreCategory.setOnClickListener {
             Navigation.toCategory(this)
@@ -91,9 +83,7 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeFragmentContract
         tvMoreEconomic.setOnClickListener {
             Navigation.toCategoryDetail(context!!, KT, ktName!!)
         }
-        tvMoreAccount.setOnClickListener {
-            Navigation.toCategoryDetail(context!!, KTo, ktoName!!)
-        }
+
         tvMoreMechanical.setOnClickListener {
             Navigation.toCategoryDetail(context!!, KTCK, ktckName!!)
         }
@@ -110,8 +100,7 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeFragmentContract
     override fun fillSubjects(
         listCNTT: List<Subjects>?,
         listKT: List<Subjects>?,
-        listKTCK: List<Subjects>?,
-        listKTo: List<Subjects>?
+        listKTCK: List<Subjects>?
     ) {
         if(listCNTT!=null) {
             adapterCNTT.appendData(listCNTT)
@@ -122,9 +111,7 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeFragmentContract
         if(listKTCK!=null){
             adapterKTCK.appendData(listKTCK)
         }
-        if(listKTo!=null){
-            adapterKTo.appendData(listKTo)
-        }
+
     }
 
     override fun fillCategories(listCategories: List<Categories>) {
